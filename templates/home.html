@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Auth0 Flask Login</title></head>
+<body>
+    {% if session %}
+        <h2>Welcome, {{ session.userinfo.name }}</h2>
+        <pre>{{ session.userinfo | tojson(indent=2) }}</pre>
+        <a href="/logout">Logout</a>
+    {% else %}
+        <h2>Welcome</h2>
+        <a href="/login">Login</a>
+    {% endif %}
+</body>
+</html>
